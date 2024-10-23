@@ -1,4 +1,5 @@
 ---
+import { ThemeScript } from 'astro-theme-toggle'
 import Navbar from '../components/Navbar.astro'
 ---
 
@@ -8,6 +9,7 @@ import Navbar from '../components/Navbar.astro'
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<ThemeScript />
 		<title>Astro</title>
 	</head>
 	<body>

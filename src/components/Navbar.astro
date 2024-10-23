@@ -23,10 +23,74 @@ const navLinks = [
 	<div class="flex items-center justify-between">
 		<div class="flex justify-center gap-2">
 			<img src="logo.svg" alt="logo" />
-			<h2 class="text-[#5417D7]">Sascha Schmittinger</h2>
+			<h2>Sascha Schmittinger</h2>
 		</div>
-		<div class="flex space-x-6">
-			{navLinks.map(({ title, href }) => <a href={href}>{title} </a>)}
+		<div class="hidden space-x-6 md:flex">
+			{
+				navLinks.map(({ title, href }) => (
+					<a class="hover:text-darkGrayishBlue transition duration-200" href={href}>
+						{title}{' '}
+					</a>
+				))
+			}
 		</div>
+		<button id="theme-toggle">
+			<!-- https://lucide.dev/icons/moon -->
+			<svg
+				class="icon-moon"
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg
+			>
+			<!-- https://lucide.dev/icons/sun -->
+			<svg
+				class="icon-sun"
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="lucide lucide-sun"
+				><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"
+				></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path
+					d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path
+					d="m19.07 4.93-1.41 1.41"></path></svg
+			>
+		</button>
 	</div>
 </nav>
+
+<script>
+	import { handleToggleClick } from 'astro-theme-toggle'
+	const addListener = () => {
+		document.getElementById('theme-toggle')?.addEventListener('click', handleToggleClick)
+	}
+	addListener()
+	document.addEventListener('astro:after-swap', addListener)
+</script>
+
+<style is:global>
+	.icon-sun {
+		display: block;
+	}
+	.icon-moon {
+		display: none;
+	}
+	.dark .icon-sun {
+		display: none;
+	}
+	.dark .icon-moon {
+		display: block;
+	}
+</style>
