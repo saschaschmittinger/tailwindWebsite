@@ -1,0 +1,32 @@
+---
+const navLinks = [
+	{
+		title: 'Pricing',
+		href: '#'
+	},
+	{
+		title: 'Product',
+		href: '/product'
+	},
+	{
+		title: 'About me',
+		href: '/about'
+	},
+	{
+		title: 'Contact',
+		href: '/Contact'
+	}
+]
+---
+
+<nav class="container relative mx-auto p-6">
+	<div class="flex items-center justify-between">
+		<div class="flex justify-center gap-2">
+			<img src="logo.svg" alt="logo" />
+			<h2 class="text-[#5417D7]">Sascha Schmittinger</h2>
+		</div>
+		<div class="flex space-x-6">
+			{navLinks.map(({ title, href }) => <a href={href}>{title} </a>)}
+		</div>
+	</div>
+</nav>
