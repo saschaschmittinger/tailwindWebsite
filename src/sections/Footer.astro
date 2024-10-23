@@ -1,0 +1,123 @@
+---
+const sozialLinks = [
+	{
+		src: 'icon-facebook.svg'
+	},
+	{
+		src: 'icon-youtube.svg'
+	},
+	{
+		src: 'icon-twitter.svg'
+	},
+	{
+		src: 'icon-pinterest.svg'
+	}
+]
+const navLinks = [
+	{
+		title: 'Pricing',
+		href: '/pricing'
+	},
+	{
+		title: 'Product',
+		href: '/product'
+	},
+	{
+		title: 'About me',
+		href: '/about'
+	},
+	{
+		title: 'Contact',
+		href: '/Contact'
+	}
+]
+
+const navlinksRight = [
+	{
+		title: 'Careers',
+		href: '#'
+	},
+	{
+		title: 'Community',
+		href: '#'
+	},
+	{
+		title: 'Privacy Policy',
+		href: '#'
+	}
+]
+---
+
+<footer class="bg-veryDarkBlue">
+	<!-- Flex Container -->
+	<div
+		class="container mx-auto flex flex-col-reverse justify-between space-y-8 px-6 py-10 md:flex-row md:space-y-0"
+	>
+		<!-- Logo and social links container -->
+		<div
+			class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:items-start md:space-y-0"
+		>
+			<div class="mx-auto my-6 text-center text-white md:hidden">
+				Copyright &copy; 2022, All Rights Reserved
+			</div>
+			<!-- Logo -->
+			<div>
+				<div class="flex justify-center gap-2">
+					<img src="logo.svg" alt="logo" width="20" height="20" />
+					<small><h2 class="text-white">Sascha Schmittinger</h2></small>
+				</div>
+			</div>
+			<!-- Social Links Container -->
+			<div class="flex justify-center space-x-4">
+				<!-- Link 1 -->
+				{
+					sozialLinks.map(({ src }) => (
+						<a href="#">
+							<img class="h-6" src={src} alt="bild" />
+						</a>
+					))
+				}
+			</div>
+		</div>
+		<!-- List Container -->
+		<div class="flex justify-around space-x-32">
+			<div class="flex flex-col space-y-3 text-white">
+				{
+					navLinks.map(({ title, href }) => (
+						<a class="hover:text-brightRed" href={href}>
+							{title}
+						</a>
+					))
+				}
+			</div>
+			<div class="flex flex-col space-y-3 text-white">
+				{
+					navlinksRight.map(({ title, href }) => (
+						<a class="hover:text-brightRed" href={href}>
+							{title}
+						</a>
+					))
+				}
+			</div>
+		</div>
+
+		<!-- Input Container -->
+		<div class="flex flex-col justify-between">
+			<form>
+				<div class="flex space-x-3">
+					<input
+						type="text"
+						class="flex-1 rounded-full px-4 focus:outline-none"
+						placeholder="Updated in your inbox"
+					/>
+					<button
+						class="bg-brightRed hover:bg-brightRedLight rounded-full px-6 py-2 text-white focus:outline-none"
+					>
+						Go
+					</button>
+				</div>
+			</form>
+			<div class="hidden text-white md:block">Copyright &copy; 2024, All Rights Reserved</div>
+		</div>
+	</div>
+</footer>

@@ -1,3 +1,53 @@
-<section id="testmonials">
-	<p>testmonials</p>
+---
+import { CutCornerButton } from '../components/CutCornerButton'
+---
+
+<section id="testimonials">
+	<!-- Container to heading and testm blocks -->
+	<div class="mx-auto mt-32 max-w-6xl px-5 text-center">
+		<!-- Heading -->
+		<h2 class="text-center text-4xl font-bold">What's Different About Manage?</h2>
+		<!-- Testimonials Container -->
+		<div class="mt-24 flex flex-col md:flex-row md:space-x-6">
+			<!-- Testimonial 1 -->
+			<div class="bg-veryLightGray flex flex-col items-center space-y-6 rounded-lg p-6 md:w-1/3">
+				<img src="avatar-anisha.png" class="-mt-14 w-16" alt="" />
+				<h5 class="text-lg font-bold">Anisha Li</h5>
+				<p class="text-darkGrayishBlue text-sm">
+					“Manage has supercharged our team’s workflow. The ability to maintain visibility on larger
+					milestones at all times keeps everyone motivated.”
+				</p>
+			</div>
+
+			<!-- Testimonial 2 -->
+			<div
+				class="bg-veryLightGray hidden flex-col items-center space-y-6 rounded-lg p-6 md:flex md:w-1/3"
+			>
+				<img src="avatar-ali.png" class="-mt-14 w-16" alt="" />
+				<h5 class="text-lg font-bold">Ali Bravo</h5>
+				<p class="text-darkGrayishBlue text-sm">
+					“We have been able to cancel so many other subscriptions since using Manage. There is no
+					more cross-channel confusion and everyone is much more focused.”
+				</p>
+			</div>
+
+			<!-- Testimonial 3 -->
+			<div
+				class="bg-veryLightGray hidden flex-col items-center space-y-6 rounded-lg p-6 md:flex md:w-1/3"
+			>
+				<img src="avatar-richard.png" class="-mt-14 w-16" alt="" />
+				<h5 class="text-lg font-bold">Richard Watts</h5>
+				<p class="text-darkGrayishBlue text-sm">
+					“Manage has supercharged our team’s workflow. The ability to maintain visibility on larger
+					milestones at all times keeps everyone motivated.”
+				</p>
+			</div>
+		</div>
+		<!-- Button -->
+		<div class="my-16">
+			<CutCornerButton className="bg-brightRed hover:bg-brightRedLight text-white"
+				>get started</CutCornerButton
+			>
+		</div>
+	</div>
 </section>
